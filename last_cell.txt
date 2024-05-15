@@ -1,0 +1,7 @@
+if not indices:
+    print("No results found, please refine search keyword or reduce threshold.") 
+else:
+    df_indices = [(idx, search_column) for idx in indices]
+    cell_locations = [f"{search_column_excel}{df_index[0] + 2}" for df_index in df_indices]
+    for df_index, location in zip(df_indices, cell_locations):
+        print(f"Found a match at cell {location}: {df.iloc[df_index]}")
